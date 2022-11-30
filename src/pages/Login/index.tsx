@@ -28,6 +28,14 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  let button;
+  if (isValid) {
+    button = <Button title="Entrar" />;
+  }
+  else {
+    button = "";
+  }
+
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +57,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          {button}
         </Column>
       </LoginContainer>
     </Container>
